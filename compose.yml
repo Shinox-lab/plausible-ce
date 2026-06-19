@@ -53,6 +53,8 @@ services:
       nofile:
         soft: 65535
         hard: 65535
+    expose:
+      - "8000"
     environment:
       - TMPDIR=/var/lib/plausible/tmp
       # required: https://github.com/plausible/community-edition/wiki/configuration#required
@@ -65,7 +67,7 @@ services:
       - ENABLE_EMAIL_VERIFICATION
       # web: https://github.com/plausible/community-edition/wiki/configuration#web
       - HTTP_PORT
-      - HTTPS_PORT
+      # - HTTPS_PORT
       # databases: https://github.com/plausible/community-edition/wiki/configuration#database
       - DATABASE_URL
       - CLICKHOUSE_DATABASE_URL
